@@ -1,19 +1,17 @@
 function one(input)
-    prev = nil
-    sum = 0
+    prev, count = nil, 0
     for line in io.lines(input) do
         v = tonumber(line)
         if prev ~= nil and v > prev then
-            sum = sum + 1
+            count = count + 1
         end
         prev = v
     end
-    return sum
+    return count
 end
 
 function two(input)
-    prev1, prev2, prevSum = nil, nil, nil
-    ms, count = 0, 0
+    ms, count, prev1, prev2, prevSum = 0, 0, 0, 0, nil
     for line in io.lines(input) do
         v = tonumber(line)
         ms = ms + 1
